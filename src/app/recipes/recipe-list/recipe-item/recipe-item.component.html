@@ -1,11 +1,11 @@
-<a href="#" (click)="recipeDetail()">
-    <div class="col-sm-4 mt-3">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" [src]="recipe.imageUrl" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{ recipe.name }}</h5>
-                <p class="card-text">{{recipe.description}}</p>
-            </div>
-        </div>
+<a [routerLink]="[index]" routerLinkActive="active">
+  <div class="col-sm-4 mt-3">
+    <div class="card" style="width: 18rem">
+      <img class="card-img-top" [src]="recipe.imageUrl" alt="Card image cap" />
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.name }}</h5>
+        <p class="card-text">{{ recipe.description }}</p>
+      </div>
     </div>
+  </div>
 </a>
