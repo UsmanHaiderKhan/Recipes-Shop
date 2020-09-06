@@ -6,25 +6,30 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <div class="dropdown" appDropDown>
-      <a
-        class="btn btn-primary dropdown-toggle"
-        href="#"
-        role="button"
-        id="dropdownMenuLink"
+    <!-- DropDown -->
+
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
       >
-        Dropdown link
-      </a>
-
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">To Manage Shop List</a>
-        <a class="dropdown-item" href="#">Edit Recipe</a>
-        <a class="dropdown-item" href="#">Delete Recipe</a>
+        Manage Recipes
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" (click)="onAddToShoppingList()"
+          >To Manage Shop List</a
+        >
+        <a class="dropdown-item" routerLink="edit">Edit Recipe</a>
+        <a class="dropdown-item" (click)="onDeleteShoppingList()"
+          >Delete Recipe</a
+        >
       </div>
     </div>
+    <!-- last -->
   </div>
 </div>
 <div class="row">
@@ -34,6 +39,10 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    Ingredient
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ing of recipe.ingredient">
+        {{ ing.name }}-{{ ing.amount }}
+      </li>
+    </ul>
   </div>
 </div>
